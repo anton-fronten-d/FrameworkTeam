@@ -10,6 +10,7 @@ const currentInputValue = ref<string>('');
 const itemsStore = useItemsStore();
 const search = (event: Event) => {
   const target = event.target as HTMLInputElement;
+  itemsStore.page = 1;
   itemsStore.searchParams = target.value;
   if (props.loadPictures) {
     props.loadPictures();
